@@ -1,0 +1,18 @@
+<div th:fragment="header">
+    <div class="d-flex flex-column flex-md-row align-items-center border-bottom">
+        <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
+            <span class="fs-4 ms-3">Blog</span>
+        </a>
+
+        <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
+            <a class="me-4 py-3 text-dark text-decoration-none " href="/">Main</a>
+            <a class="me-4 py-3 text-dark text-decoration-none" href="/blog">All blogs</a>
+            <a class="me-4 py-3 text-dark text-decoration-none" href="/blog-my">My blogs</a>
+            <a class="me-4 py-3 text-dark text-decoration-none" href="/blog/add">Add new</a>
+            <form th:action="@{/logout}" method="post" class="me-4 py-3 text-dark text-decoration-none">
+                <input type="submit" value="Exit"/>
+            </form>
+
+        </nav>
+    </div>
+</div>
