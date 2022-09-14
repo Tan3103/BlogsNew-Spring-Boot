@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User edit</title>
+</head>
+<body>
+
+<div class="container mt-5 mb-5">
+  <br>
+  <h1 style="text-align: center;" class="alert alert-info">Edit user</h1>
+  <form th:action="@{/user/{id}(id=${user.id})}"
+        th:object="${user}"
+        method="post">
+
+    <label for="name">Title: </label>
+    <input type="text" th:field="*{name}" id="name" placeholder="name" class="form-control">
+    <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
+    <br>
+    <label for="surname">Full text: </label>
+    <input type="text" th:field="*{surname}" id="surname" placeholder="surname" class="form-control">
+    <span th:if="${#fields.hasErrors('surname')}" th:errors="*{surname}"></span>
+    <br>
+    <label for="email">Full text: </label>
+    <input type="text" th:field="*{email}" id="email" placeholder="email" class="form-control">
+    <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span>
+    <br>
+    <label for="roles">Full text: </label>
+    <input type="text" th:field="*{roles}" id="roles" placeholder="roles" class="form-control">
+    <span th:if="${#fields.hasErrors('roles')}" th:errors="*{roles}"></span>
+    <br>
+
+    <input type="submit" value="Update" class="btn btn-success">
+  </form>
+</div>
+
+</body>
+</html>

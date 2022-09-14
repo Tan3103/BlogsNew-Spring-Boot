@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div class="container mt-5" >
+    <h1 align="center">List of users</h1>
+    <br>
+        <table border="1" style="width:300px">
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>Surname</th>
+                <th>Email</th>
+                <th>Role</th>
+            </tr>
+            </thead>
+
+            <tr th:each="el : ${users}">
+                <td th:text="${el.name}">name</td>
+                <td th:text="${el.surname}">name</td>
+                <td th:text="${el.email}">name</td>
+                <td th:text="${el.roles}">name</td>
+                <td><a th:href="'/user/' + ${el.id}">edit</a></td>
+            </tr>
+        </table>
+</div>
+
+</body>
+</html>
